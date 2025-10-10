@@ -71,8 +71,8 @@ func NewSlackNotifier(
 	}
 }
 
-const redoraChannel = "https://hooks.slack.com/services/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"
-const alertsChannel = "https://hooks.slack.com/services/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"
+const redoraChannel = "https://hooks.slack.com/services/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"
+const alertsChannel = "https://hooks.slack.com/services/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"
 
 func (s *SlackNotifier) SendTrackingError(ctx context.Context, trackingID, project string, err error) {
 	msg := fmt.Sprintf("*Tracking Error*\n "+
