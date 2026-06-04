@@ -16,8 +16,8 @@ import NotificationProvider from '@/components/layout/notification'
 // const amplitudeApiKey = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY || '';
 
 export const metadata = {
-  title: 'RedoraAI',
-  description: ''
+  title: 'Reddomi',
+  description: 'Reddit lead discovery and automated outreach for B2B SaaS founders and agencies.'
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta name='robots' content='noindex,follow' />
         <link rel="icon" href="/images/favicon.ico" />
-        <title>RedoraAI</title>
+        <title>Reddomi</title>
 
         <script
           src="https://browser.sentry-cdn.com/8.47.0/bundle.tracing.replay.min.js"

@@ -1,10 +1,9 @@
-import { DescMessage, DescService } from '@bufbuild/protobuf'
-import { PromiseClient } from '@connectrpc/connect'
-import { MethodInfoUnary } from '@connectrpc/connect/dist/esm/types'
+import { DescMessage, DescMethodUnary, DescService } from '@bufbuild/protobuf'
+import { Client } from '@connectrpc/connect'
 import useSWRMutation, { SWRMutationConfiguration } from 'swr/mutation'
 
 type UnaryMethods<S extends DescService> = {
-  [M in keyof S['method']]: S['method'][M] extends MethodInfoUnary<DescMessage, DescMessage> ? M : never
+  [M in keyof S['method']]: S['method'][M] extends DescMethodUnary<DescMessage, DescMessage> ? M : never
 }[keyof S['method']]
 
 /**
@@ -17,17 +16,17 @@ type UnaryMethods<S extends DescService> = {
  * saveQuote({ quoteId: id }).catch((err: unknown) => { })
  * ```
  *
- * Where `conversationClient` is a gRPC client you created with `createPromiseClient` and the
+ * Where `conversationClient` is a gRPC client you created with `createClient` and the
  * literal saveQuote is the method you want to call on the client if you were doing
  * `conversationClient.saveQuote({ userId: name })` directly.
  */
 export const useGrpcSwrMutation = <
   S extends DescService,
   M extends UnaryMethods<S>,
-  P extends Parameters<PromiseClient<S>[M]>,
-  R extends ReturnType<PromiseClient<S>[M]>
+  P extends Parameters<Client<S>[M]>,
+  R extends ReturnType<Client<S>[M]>
 >(
-  service: PromiseClient<S>,
+  service: Client<S>,
   method: M,
   options: SWRMutationConfiguration<Awaited<R>, unknown, () => Promise<R>> = {}
 ) => {

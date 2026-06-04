@@ -664,7 +664,7 @@ export function RedditAccountsList() {
                             <Info className="h-4 w-4 text-blue-600 mt-0.5 flex-shrink-0" />
                             <div className="text-xs text-blue-800">
                               <p className="font-medium mb-1">Why connect cookies?</p>
-                              <p>Enable advanced features like sending direct messages and automated warm activities to simulate real user behavior.</p>
+                              <p>Use this for the no-API MVP path: connect a Reddit account with cookies to enable DM automation and warm-up actions without requiring official Reddit API credentials.</p>
                             </div>
                           </div>
                         </div>

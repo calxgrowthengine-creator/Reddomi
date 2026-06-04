@@ -1,11 +1,11 @@
-# 🧠 RedoraAI
+# 🧠 Reddomi
 
-**RedoraAI** is an open-source, AI-powered lead generation platform for **Reddit**.\
+**Reddomi** is an open-source, AI-powered lead generation platform for **Reddit**.\
 It automates lead discovery, monitoring, and engagement — helping you find and connect with high-intent users across Reddit while staying fully compliant with community rules.
 
 > 🚀 Automate your Reddit lead generation with AI agents that discover relevant subreddits, monitor discussions, and craft authentic, rule-safe engagement messages.
 > 
-> You can explore and use RedoraAI online at https://redoraai.com
+> This repo is now positioned as the MVP foundation for the Reddomi SaaS launch.
 
 ---
 
@@ -83,7 +83,17 @@ It automates lead discovery, monitoring, and engagement — helping you find and
 
 ## 🏗️ Architecture Overview
 
-This repository contains all components required to run RedoraAI.
+This repository contains all components required to run the Reddomi MVP.
+
+## No Reddit API required for the MVP
+
+The fastest path to a working test is the cookie-based Reddit DM login flow:
+
+- Use the Cookie Integration screen in the portal to connect a Reddit account.
+- This path is designed to work without official Reddit API credentials for DM automation.
+- The API/OAuth path is optional and mainly useful for broader comment automation.
+
+For the launch checklist and readiness notes, see [docs/MVP_READY.md](docs/MVP_READY.md).
 
 ```
 .
@@ -215,6 +225,18 @@ pnpm dev:portal
 ```
 
 Visit: [http://localhost:3000](http://localhost:3000)
+
+## 🚀 MVP launch checklist
+
+The current repo is ready for a lean MVP launch path when the following are in place:
+
+1. Valid Reddit integration credentials or browser/cookie automation flow
+2. Working OpenAI/LiteLLM key for DM/comment generation
+3. Auth0 + portal config for real user sign-in
+4. Billing/trial flow stubbed for the first customer demo
+5. Clean Reddomi branding and onboarding copy
+
+Use this repo as the launch foundation for Reddomi, then upgrade only the features that customers actually ask for.
 
 ---
 
